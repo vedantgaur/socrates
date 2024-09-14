@@ -1,0 +1,9 @@
+flask
+wikipedia
+openai
+markdown
+unstructured-client
+#manim
+langchain
+langchain_openai
+tiktoken

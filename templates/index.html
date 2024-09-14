@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socrates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class = "landing">
+        <h1 style = "margin-block-end: 0;">Socrates</h1>
+        <p style = "margin: none;">Deep dive into anything.</p>
+        <form method="POST">
+            <input type="text" name="query" placeholder="Enter a topic" required>
+            <button type="submit">Go</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        
+</body>
+</html>
