@@ -1,9 +1,5 @@
 flask
 wikipedia
+modal
 openai
-markdown
-unstructured-client
-#manim
-langchain
-langchain_openai
-tiktoken
+# sqlite3

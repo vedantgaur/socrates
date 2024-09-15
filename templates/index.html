@@ -3,19 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socrates</title>
+    <title>Rabbit Hole</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+
+    #gif-container {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px; /* Adjust size */
+        height: auto; /* Maintain aspect ratio */
+        display: none;
+        z-index: 1000;
+    }
+
+    #scroll-arrow {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 60px; /* Increased size */
+        height: 60px; /* Increased size */
+        background: url("{{ url_for('static', filename='gifs/arrow.gif') }}") no-repeat center center;
+        background-size: contain;
+        display: none;
+        z-index: 1001;
+    }
+    </style>
 </head>
 <body>
-    <div class = "landing">
-        <h1 style = "margin-block-end: 0;">Socrates</h1>
-        <p style = "margin: none;">Deep dive into anything.</p>
-        <form method="POST">
+    <div class="landing">
+        <img src="{{ url_for('static', filename='rabbit.png') }}" alt="Rabbit Logo" style="width: 200px; height: auto;">
+        <h1>Rabbit Hole</h1>
+        <p>Deep dive into anything.</p>
+        <form id="search-form">
             <input type="text" name="query" placeholder="Enter a topic" required>
             <button type="submit">Go</button>
         </form>
     </div>
+    <div id="content" style="display: none;"></div>
+    <div id="chat-container" style="display: none;">
+        <div id="chat-messages"></div>
+        <form id="chat-form">
+            <input type="text" id="chat-input" placeholder="Ask a question...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div id="gif-container">
+        <img src="{{ url_for('static', filename='gifs/rabbit.gif') }}" alt="Rabbit Jumping">
+    </div>
+    <div id="scroll-arrow"></div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
